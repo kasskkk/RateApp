@@ -24,8 +24,13 @@ namespace RateApp.Application.Services
         {
             var employee = new Employee()
             {
-                Name = employeeDto.Name,
                 Rating = employeeDto.Rating,
+                Name = employeeDto.Name,
+                FirstName = employeeDto.FirstName,
+                LastName = employeeDto.LastName,
+                Age = employeeDto.Age,
+                Email = employeeDto.Email,
+                PhoneNumber = employeeDto.PhoneNumber,
             };
 
             _employeeDao.Create(employee);

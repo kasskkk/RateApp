@@ -17,7 +17,12 @@ namespace RateApp.Infrastructure.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseNpgsql("Host=localhost;Database=RateApp;Username=postgres;Password=1234");
         }
-
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            // Dodatkowe konfiguracje
+        }
     }
 }

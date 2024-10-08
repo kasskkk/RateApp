@@ -134,7 +134,11 @@ namespace RateApp.Ui.UI
                         _employeeService.GetEmployeeById(id);
                         break;
                     case 5:
-                        _employeeService.GetAllEmployees();
+                        var employees = _employeeService.GetAllEmployees();
+                        foreach (var item in employees)
+                        {
+                            Console.WriteLine(item);
+                        }
                         break;
                     case 6:
 
