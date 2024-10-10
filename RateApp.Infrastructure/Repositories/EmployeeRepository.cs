@@ -10,12 +10,19 @@ using System.Threading.Tasks;
 
 namespace RateApp.Infrastructure.Repositories
 {
+    // WE DONT USE IT 
+    // IF WE WANT GENERAL METHODS FOR ANY REPOSITORY USE THIS INSTEAD OF EMPLOYEEDAO IN EMPLOYEESERVICE 
     public class EmployeeRepository : Repository<Employee>, IEmployeeRepository
     {
-        private readonly EmployeeDao _employeeDao;
-        public EmployeeRepository(EmployeeDao employeeDao) : base(employeeDao)
+        private readonly IEmployeeDao _employeeDao;
+        public EmployeeRepository(IEmployeeDao employeeDao) : base((GenericDao<Employee>)employeeDao)
         {
             _employeeDao = employeeDao;
+        }
+
+        public void Test()
+        {
+            Console.WriteLine("testowy test");
         }
     }
 }

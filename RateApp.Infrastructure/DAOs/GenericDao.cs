@@ -32,12 +32,6 @@ namespace RateApp.Infrastructure.DAOs
                 throw new ArgumentException("Id must be greater than 0",nameof(id));
             }
 
-            //var employee = _context.Set<T>().Find(id);
-            //if (employee == null)
-            //{
-            //    throw new ArgumentNullException("Cannot find a employee with id:", nameof(id));
-            //}
-            //return employee;
             return _context.Set<T>().Find(id);
         }
         public IEnumerable<T> GetAll()

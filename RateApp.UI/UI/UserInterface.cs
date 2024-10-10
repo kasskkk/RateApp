@@ -141,7 +141,7 @@ namespace RateApp.Ui.UI
                         }
                         break;
                     case 6:
-
+                        _employeeService.Test();
                         break;
                     default:
                         Console.WriteLine("Please check input");

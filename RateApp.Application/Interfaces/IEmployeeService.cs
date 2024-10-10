@@ -17,5 +17,6 @@ namespace RateApp.Application.Interfaces
         void DeleteEmployee(int id);
         EmployeeDto GetEmployeeById(int id);
         IEnumerable<EmployeeDto> GetAllEmployees();
+        void Test();
     }
 }

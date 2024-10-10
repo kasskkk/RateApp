@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace RateApp.Infrastructure.Repositories
 {
+    // WE DONT USE IT 
     public class Repository<T> : IRepository<T> where T : class
     {
         private readonly GenericDao<T> _dao;

@@ -9,6 +9,6 @@ namespace RateApp.Domain.Interfaces
 {
     public interface IEmployeeRepository : IRepository<Employee>
     {
-        
+        void Test();
     }
 }

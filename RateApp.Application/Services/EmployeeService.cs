@@ -13,13 +13,17 @@ namespace RateApp.Application.Services
 
     public class EmployeeService : IEmployeeService
     {
-        private readonly IEmployeeDao _employeeDao;
+        //private readonly IEmployeeDao _employeeDao;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public EmployeeService(IEmployeeDao employeeDao)
+        //public EmployeeService(IEmployeeDao employeeDao)
+        //{
+        //    _employeeDao = employeeDao ?? throw new ArgumentNullException(nameof(employeeDao));
+        //}
+        public EmployeeService(IEmployeeRepository employeeRepository)
         {
-            _employeeDao = employeeDao ?? throw new ArgumentNullException(nameof(employeeDao));
+            _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(employeeRepository));
         }
-
         public void CreateEmployee(EmployeeDto employeeDto)
         {
             var employee = new Employee()
@@ -33,17 +37,17 @@ namespace RateApp.Application.Services
                 PhoneNumber = employeeDto.PhoneNumber,
             };
 
-            _employeeDao.Create(employee);
+            _employeeRepository.Create(employee);
         }
 
         public void DeleteEmployee(int id)
         {
-            _employeeDao.Delete(id);
+            _employeeRepository.Delete(id);
         }
 
         public IEnumerable<EmployeeDto> GetAllEmployees()
         {
-            var employees = _employeeDao.GetAll();
+            var employees = _employeeRepository.GetAll();
 
             if (employees == null)
             {
@@ -60,7 +64,7 @@ namespace RateApp.Application.Services
 
         public EmployeeDto GetEmployeeById(int id)
         {
-            var employee = _employeeDao.GetById(id);
+            var employee = _employeeRepository.GetById(id);
 
             if (employee == null)
             {
@@ -84,7 +88,7 @@ namespace RateApp.Application.Services
                 Rating = employeeDto.Rating,
             };
 
-            _employeeDao.Update(employee);
+            _employeeRepository.Update(employee);
         }
 
         public void UpdateRatingEmployee(EmployeeDto employeeDto)
@@ -94,14 +98,19 @@ namespace RateApp.Application.Services
                 throw new ArgumentOutOfRangeException("Rating must be equal or greater than 0");
             }
 
-            var employee = _employeeDao.GetById(employeeDto.Id);
+            var employee = _employeeRepository.GetById(employeeDto.Id);
             if (employee == null)
             {
                 throw new ArgumentException($"Employee with {employeeDto.Id} not found");
             }
 
             employee.Rating = employeeDto.Rating;
-            _employeeDao.Update(employee);
+            _employeeRepository.Update(employee);
+        }
+
+        public void Test()
+        {
+            _employeeRepository.Test();
         }
     }
 }

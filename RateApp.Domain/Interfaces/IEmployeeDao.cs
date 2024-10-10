@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RateApp.Domain.Interfaces
 {
+    // WE DONT NEED THIS CLASS WE CAN USE EMPLOYEEREPOSITORY INSTEAD
     public interface IEmployeeDao
     {
         void Create(Employee employee);
