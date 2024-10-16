@@ -1,13 +1,11 @@
-﻿using RateApp.Domain.Entities;
-using RateApp.Domain.Interfaces;
-using RateApp.Infrastructure.DAOs;
+﻿using RateApp.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RateApp.Infrastructure.Repositories
+namespace RateApp.Infrastructure.Generic
 {
     // WE DONT USE IT 
     public class Repository<T> : IRepository<T> where T : class
@@ -15,7 +13,7 @@ namespace RateApp.Infrastructure.Repositories
         private readonly GenericDao<T> _dao;
         public Repository(GenericDao<T> dao)
         {
-            _dao = dao;  
+            _dao = dao;
         }
         public void Create(T entity)
         {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RateApp.Domain.Entities;
+using RateApp.Domain.Employee;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ namespace RateApp.Infrastructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<Employee> Employees { get; set; }
+        public DbSet<RateApp.Domain.Employee.Employee> Employees { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }

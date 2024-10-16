@@ -1,6 +1,4 @@
-﻿using RateApp.Application.DTOs;
-using RateApp.Application.Interfaces;
-using RateApp.Domain.Entities;
+﻿using RateApp.Application.Employee;
 using RateApp.Domain.Interfaces;
 using System;
 using System.Collections.Generic;

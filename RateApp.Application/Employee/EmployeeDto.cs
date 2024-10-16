@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RateApp.Application.DTOs
+namespace RateApp.Application.Employee
 {
     public class EmployeeDto
     {
@@ -21,5 +21,5 @@ namespace RateApp.Application.DTOs
         {
 
         }
-    } 
+    }
 }

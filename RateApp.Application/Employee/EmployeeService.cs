@@ -1,14 +1,11 @@
-﻿using RateApp.Application.DTOs;
-using RateApp.Application.Interfaces;
-using RateApp.Domain.Entities;
-using RateApp.Domain.Interfaces;
+﻿using RateApp.Domain.Employee;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RateApp.Application.Services
+namespace RateApp.Application.Employee
 {
 
     public class EmployeeService : IEmployeeService
@@ -26,7 +23,7 @@ namespace RateApp.Application.Services
         }
         public void CreateEmployee(EmployeeDto employeeDto)
         {
-            var employee = new Employee()
+            var employee = new RateApp.Domain.Employee.Employee()
             {
                 Rating = employeeDto.Rating,
                 Name = employeeDto.Name,
@@ -73,7 +70,7 @@ namespace RateApp.Application.Services
 
             return new EmployeeDto
             {
-                Id= employee.Id,
+                Id = employee.Id,
                 Name = employee.Name,
                 Rating = employee.Rating,
             };
@@ -81,9 +78,9 @@ namespace RateApp.Application.Services
 
         public void UpdateEmployee(EmployeeDto employeeDto)
         {
-            var employee = new Employee()
+            var employee = new RateApp.Domain.Employee.Employee()
             {
-                Id = employeeDto.Id ,
+                Id = employeeDto.Id,
                 Name = employeeDto.Name,
                 Rating = employeeDto.Rating,
             };

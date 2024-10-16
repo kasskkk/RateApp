@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace RateApp.Domain.Entities
+namespace RateApp.Domain.Employee
 {
     public class Employee
     {
@@ -13,7 +13,7 @@ namespace RateApp.Domain.Entities
         public int Id { get; set; }
         public double? Rating { get; set; }
         public string? Name { get; set; }
-        public string? FirstName { get; set; } 
+        public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public int? Age { get; set; }
         public string? Email { get; set; }
@@ -21,7 +21,7 @@ namespace RateApp.Domain.Entities
 
         public Employee()
         {
-            
+
         }
     }
 }

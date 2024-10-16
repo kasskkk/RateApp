@@ -1,12 +1,11 @@
-﻿using RateApp.Domain.Entities;
-using RateApp.Infrastructure.Data;
+﻿using RateApp.Infrastructure.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RateApp.Infrastructure.DAOs
+namespace RateApp.Infrastructure.Generic
 {
     public class GenericDao<T> where T : class
     {
@@ -14,12 +13,12 @@ namespace RateApp.Infrastructure.DAOs
         public GenericDao(ApplicationDbContext context)
         {
             _context = context;
-        }     
+        }
         public void Create(T entity)
         {
             if (entity == null)
             {
-                throw new ArgumentNullException(nameof(entity),"Cannot create a null entity");
+                throw new ArgumentNullException(nameof(entity), "Cannot create a null entity");
             }
 
             _context.Set<T>().Add(entity);
@@ -29,7 +28,7 @@ namespace RateApp.Infrastructure.DAOs
         {
             if (id <= 0)
             {
-                throw new ArgumentException("Id must be greater than 0",nameof(id));
+                throw new ArgumentException("Id must be greater than 0", nameof(id));
             }
 
             return _context.Set<T>().Find(id);
@@ -50,7 +49,7 @@ namespace RateApp.Infrastructure.DAOs
         {
             if (entity == null)
             {
-                throw new ArgumentNullException(nameof(entity),"Cannot update a null entity");
+                throw new ArgumentNullException(nameof(entity), "Cannot update a null entity");
             }
 
             _context.Set<T>().Update(entity);

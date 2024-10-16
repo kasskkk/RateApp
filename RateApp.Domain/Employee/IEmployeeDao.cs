@@ -1,11 +1,10 @@
-﻿using RateApp.Domain.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RateApp.Domain.Interfaces
+namespace RateApp.Domain.Employee
 {
     // WE DONT NEED THIS CLASS WE CAN USE EMPLOYEEREPOSITORY INSTEAD
     public interface IEmployeeDao
