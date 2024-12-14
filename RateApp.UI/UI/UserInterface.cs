@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 
 namespace RateApp.Ui.UI
 {
-    //TODO UI IS NOT DONE ALSO THERE SHOULD BE 
     public class UserInterface
     {
         private readonly IEmployeeService _employeeService;
@@ -21,14 +20,14 @@ namespace RateApp.Ui.UI
             int choice, id, age;
             double rating;
             string name, firstName, lastName, email, phoneNumber;
-            //EmployeeDto employeeDto = new EmployeeDto();
             do
             {
+                Console.Clear();
                 Console.WriteLine("---RATING EMPLOYEE APP---");
 
                 Console.WriteLine("Chose option \n1-Create employee \n2-Update employee \n3-Delete employee \n4-Get by Id employee \n5-Display all employees \n6-Update rating of employee");
 
-                while (!int.TryParse(Console.ReadLine(), out choice))
+                while (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 6)
                 {
                     Console.WriteLine("Invalid input choose from 1-6");
                 }
@@ -58,7 +57,6 @@ namespace RateApp.Ui.UI
                         Console.Write("Enter phone: ");
                         phoneNumber = Console.ReadLine();
 
-                        // Przypisanie wartości do employeeDto
                         var employeeDto = new EmployeeDto
                         {
                             Rating = rating,
@@ -70,7 +68,6 @@ namespace RateApp.Ui.UI
                             PhoneNumber = phoneNumber
                         };
 
-                        // Następnie wywołanie CreateEmployee
                         _employeeService.CreateEmployee(employeeDto);
                         break;
                     case 2:
